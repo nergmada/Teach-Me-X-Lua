@@ -82,3 +82,15 @@ function newPerson(name, age, height)
     --So we've constructed a new person here, let's give this new person back to whoever asked for it
     
 end
+
+--Lets now quickly use our object, I'm going to create me
+local me = newPerson("adam", 18, 192)
+
+print(me.getName()) --adam
+print(me.getAge()) -- 18
+
+me.growOlder() --Makes me grow a year older
+print(me.getAge()) --19
+
+me:goJogging() --reduces my energy (note the colon again, has to be used to pass salf implicitly)
+me.goJogging(me) --alternatively you can pass self explicitly... This also allows static functions by passing a different object to self
